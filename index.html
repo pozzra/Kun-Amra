@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Noto+Sans+Khmer:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -69,15 +69,29 @@
       </a>
 
       <nav class="main-nav" aria-label="Primary Navigation">
-        <a href="#about" class="nav-link">About</a>
-        <a href="#lab" class="nav-link">Topology Lab</a>
-        <a href="#skills" class="nav-link">Skills</a>
-        <a href="#experience" class="nav-link">Experience</a>
-        <a href="#credentials" class="nav-link">Education</a>
-        <a href="#contact" class="nav-link">Contact</a>
+        <a href="#about" class="nav-link" data-i18n="nav_about">About</a>
+        <a href="#lab" class="nav-link" data-i18n="nav_lab">Topology Lab</a>
+        <a href="#skills" class="nav-link" data-i18n="nav_skills">Skills</a>
+        <a href="#experience" class="nav-link" data-i18n="nav_experience">Experience</a>
+        <a href="#credentials" class="nav-link" data-i18n="nav_education">Education</a>
+        <a href="#contact" class="nav-link" data-i18n="nav_contact">Contact</a>
       </nav>
 
       <div class="header-actions">
+        <!-- Language Switcher -->
+        <div class="lang-switcher" id="langSwitcher">
+          <button type="button" class="lang-btn" id="langBtn" aria-haspopup="true" aria-expanded="false" title="Switch Language">
+            <span id="langBtnLabel">EN</span>
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="lang-dropdown" id="langDropdown" role="menu" hidden>
+            <button type="button" class="lang-opt active" data-lang="en" role="menuitem"><span class="lang-code mono">EN</span><span>English</span></button>
+            <button type="button" class="lang-opt" data-lang="kh" role="menuitem"><span class="lang-code mono">KH</span><span>ខ្មែរ</span></button>
+            <button type="button" class="lang-opt" data-lang="ch" role="menuitem"><span class="lang-code mono">CH</span><span>中文</span></button>
+            <button type="button" class="lang-opt" data-lang="vn" role="menuitem"><span class="lang-code mono">VN</span><span>Tiếng Việt</span></button>
+          </div>
+        </div>
+
         <button type="button" class="icon-btn" id="themeToggle" aria-label="Toggle Light or Dark Theme"
           title="Switch Theme">
           <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -92,7 +106,7 @@
           </svg>
         </button>
 
-        <button type="button" class="btn btn-ghost btn-sm hide-sm" id="openCoverLetterHeader">
+        <button type="button" class="btn btn-ghost btn-sm hide-sm" id="openCoverLetterHeader" data-i18n="btn_cover_letter">
           Cover Letter
         </button>
 
@@ -104,7 +118,7 @@
             <polyline points="7 10 12 15 17 10" />
             <line x1="12" y1="15" x2="12" y2="3" />
           </svg>
-          <span>Download CV</span>
+          <span data-i18n="btn_download_cv">Download CV</span>
         </a>
 
         <button type="button" class="menu-toggle" id="menuToggle" aria-label="Open Navigation Menu"
@@ -118,13 +132,13 @@
 
     <!-- Mobile Drawer -->
     <div class="mobile-nav" id="mobileNav">
-      <a href="#about" class="mobile-link">About</a>
-      <a href="#lab" class="mobile-link">Topology Lab</a>
-      <a href="#skills" class="mobile-link">Skills</a>
-      <a href="#experience" class="mobile-link">Experience</a>
-      <a href="#credentials" class="mobile-link">Education</a>
-      <a href="#contact" class="mobile-link">Contact</a>
-      <button type="button" class="mobile-link mobile-link--btn" id="openCoverLetterMobile">Read Cover Letter</button>
+      <a href="#about" class="mobile-link" data-i18n="nav_about">About</a>
+      <a href="#lab" class="mobile-link" data-i18n="nav_lab">Topology Lab</a>
+      <a href="#skills" class="mobile-link" data-i18n="nav_skills">Skills</a>
+      <a href="#experience" class="mobile-link" data-i18n="nav_experience">Experience</a>
+      <a href="#credentials" class="mobile-link" data-i18n="nav_education">Education</a>
+      <a href="#contact" class="mobile-link" data-i18n="nav_contact">Contact</a>
+      <button type="button" class="mobile-link mobile-link--btn" id="openCoverLetterMobile" data-i18n="btn_cover_letter_read">Read Cover Letter</button>
     </div>
   </header>
 
@@ -135,11 +149,11 @@
         <div class="hero-content">
           <div class="status-pill reveal" data-delay="0">
             <span class="pulse-dot" aria-hidden="true"></span>
-            <span class="mono">AVAILABLE FOR HIRE &bull; PHNOM PENH, CAMBODIA</span>
+            <span class="mono" data-i18n="hero_status">AVAILABLE FOR HIRE • PHNOM PENH, CAMBODIA</span>
           </div>
 
           <h1 id="hero-heading" class="hero-title reveal" data-delay="80">
-            <span class="hero-eyebrow">Hello, I&rsquo;m</span>
+            <span class="hero-eyebrow" data-i18n="hero_eyebrow">Hello, I&rsquo;m</span>
             <span class="hero-name">Kun Amra</span>
             <span class="hero-role-line">
               <span class="role-prefix">&gt;_</span>
@@ -150,7 +164,7 @@
             </span>
           </h1>
 
-          <p class="hero-lead reveal" data-delay="160">
+          <p class="hero-lead reveal" data-delay="160" data-i18n="hero_lead">
             Information Technology Bachelor&rsquo;s graduate (ITI) and hands-on field technician from KTC Engineering.
             I deploy resilient network infrastructure, secure VLAN &amp; surveillance systems, and keep enterprise
             workstations running at peak uptime.
@@ -158,7 +172,7 @@
 
           <div class="hero-cta-row reveal" data-delay="240">
             <a href="#contact" class="btn btn-primary magnetic">
-              <span>Hire / Contact Me</span>
+              <span data-i18n="cta_hire">Hire / Contact Me</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <line x1="5" y1="12" x2="19" y2="12" />
@@ -170,7 +184,7 @@
                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <polygon points="5 3 19 12 5 21 5 3" />
               </svg>
-              <span>Explore Live Network Lab</span>
+              <span data-i18n="cta_lab">Explore Live Network Lab</span>
             </a>
             <button type="button" class="btn btn-ghost" id="openCoverLetterHero">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -180,22 +194,22 @@
                 <line x1="16" y1="13" x2="8" y2="13" />
                 <line x1="16" y1="17" x2="8" y2="17" />
               </svg>
-              <span>Cover Letter</span>
+              <span data-i18n="cta_cover">Cover Letter</span>
             </button>
           </div>
 
           <div class="hero-metrics reveal" data-delay="320">
             <div class="metric-card spotlight-card">
               <div class="metric-value mono"><span class="count-up" data-target="2025">2025</span></div>
-              <div class="metric-label">B.Tech IT Graduate (ITI)</div>
+              <div class="metric-label" data-i18n="metric_degree">B.Tech IT Graduate (ITI)</div>
             </div>
             <div class="metric-card spotlight-card">
               <div class="metric-value mono"><span class="count-up" data-target="6">6</span><span>+</span></div>
-              <div class="metric-label">Core IT &amp; Net Domains</div>
+              <div class="metric-label" data-i18n="metric_domains">Core IT &amp; Net Domains</div>
             </div>
             <div class="metric-card spotlight-card">
               <div class="metric-value mono"><span class="count-up" data-target="100">100</span><span>%</span></div>
-              <div class="metric-label">Uptime &amp; Field Focus</div>
+              <div class="metric-label" data-i18n="metric_uptime">Uptime &amp; Field Focus</div>
             </div>
           </div>
         </div>
@@ -208,7 +222,7 @@
             </div>
             <div class="hud-topbar">
               <span class="mono hud-id">ID // ITI-IT-2025</span>
-              <span class="hud-status"><i class="led green"></i> ONLINE</span>
+              <span class="hud-status"><i class="led green"></i> <span data-i18n="hud_online">ONLINE</span></span>
             </div>
 
             <div class="portrait-stage">
@@ -224,16 +238,16 @@
 
             <div class="hud-badges">
               <div class="hud-chip">
-                <span class="chip-k">DEGREE</span>
-                <span class="chip-v">B.Tech in IT</span>
+                <span class="chip-k" data-i18n="hud_k_degree">DEGREE</span>
+                <span class="chip-v" data-i18n="hud_v_degree">B.Tech in IT</span>
               </div>
               <div class="hud-chip">
-                <span class="chip-k">SPECIALTY</span>
-                <span class="chip-v">Routing &amp; CCTV</span>
+                <span class="chip-k" data-i18n="hud_k_specialty">SPECIALTY</span>
+                <span class="chip-v" data-i18n="hud_v_specialty">Routing &amp; CCTV</span>
               </div>
               <div class="hud-chip">
-                <span class="chip-k">BASE</span>
-                <span class="chip-v">Mean Chey, PP</span>
+                <span class="chip-k" data-i18n="hud_k_base">BASE</span>
+                <span class="chip-v" data-i18n="hud_v_base">Mean Chey, PP</span>
               </div>
             </div>
 
@@ -288,8 +302,8 @@
     <section id="about" class="section">
       <div class="container">
         <div class="section-head reveal">
-          <span class="section-tag mono">01 // PROFILE BRIEFING</span>
-          <h2 class="section-title">Bridging Field Engineering &amp; Enterprise IT Uptime</h2>
+          <span class="section-tag mono" data-i18n="s1_tag">01 // PROFILE BRIEFING</span>
+          <h2 class="section-title" data-i18n="s1_title">Bridging Field Engineering &amp; Enterprise IT Uptime</h2>
         </div>
 
         <div class="about-grid">
@@ -302,9 +316,9 @@
                   <circle cx="12" cy="7" r="4" />
                 </svg>
               </span>
-              <h3>About Me</h3>
+              <h3 data-i18n="about_h3">About Me</h3>
             </div>
-            <p>
+            <p data-i18n-html="about_p1">
               I am a passionate Information Technology graduate holding both a <strong>Technical Higher Diploma</strong>
               and a
               <strong>Bachelor of Technology in IT</strong> from the <strong>Industrial Technical Institute
@@ -313,7 +327,7 @@
                 Engineering</strong>,
               I bring a strong balance of theoretical networking foundations and hands-on deployment capability.
             </p>
-            <p>
+            <p data-i18n-html="about_p2">
               From configuring routers, Layer 2/3 switches, VLAN segmentation, and wireless APs to automating Windows OS
               deployments,
               terminating Cat5e/Cat6 cabling, and aligning NVR/DVR surveillance backups, I adapt quickly to
@@ -323,15 +337,15 @@
             <div class="about-highlights">
               <div class="highlight-item">
                 <span class="highlight-dot"></span>
-                <span>Zero-to-ready workstation setup, partitioning &amp; domain integration</span>
+                <span data-i18n="about_hl1">Zero-to-ready workstation setup, partitioning &amp; domain integration</span>
               </div>
               <div class="highlight-item">
                 <span class="highlight-dot"></span>
-                <span>Fast diagnostics for IP conflicts, link drops &amp; physical cabling faults</span>
+                <span data-i18n="about_hl2">Fast diagnostics for IP conflicts, link drops &amp; physical cabling faults</span>
               </div>
               <div class="highlight-item">
                 <span class="highlight-dot"></span>
-                <span>Continuous learner researching modern infrastructure &amp; security tools</span>
+                <span data-i18n="about_hl3">Continuous learner researching modern infrastructure &amp; security tools</span>
               </div>
             </div>
           </article>
@@ -348,22 +362,22 @@
                       d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
                   </svg>
                 </span>
-                <h3>Languages</h3>
+                <h3 data-i18n="lang_panel_h3">Languages</h3>
               </div>
               <div class="lang-list">
                 <div class="lang-row">
                   <div>
-                    <strong>Khmer</strong>
-                    <small>Native Language</small>
+                    <strong data-i18n="lang_kh_name">Khmer</strong>
+                    <small data-i18n="lang_kh_sub">Native Language</small>
                   </div>
-                  <span class="badge badge-emerald">Native</span>
+                  <span class="badge badge-emerald" data-i18n="lang_kh_badge">Native</span>
                 </div>
                 <div class="lang-row">
                   <div>
-                    <strong>English</strong>
-                    <small>Reading, Listening &amp; Speaking</small>
+                    <strong data-i18n="lang_en_name">English</strong>
+                    <small data-i18n="lang_en_sub">Reading, Listening &amp; Speaking</small>
                   </div>
-                  <span class="badge badge-cyan">Conversational / Basic</span>
+                  <span class="badge badge-cyan" data-i18n="lang_en_badge">Conversational / Basic</span>
                 </div>
               </div>
             </div>
@@ -377,13 +391,13 @@
                     <circle cx="12" cy="10" r="3" />
                   </svg>
                 </span>
-                <h3>Deployment Base</h3>
+                <h3 data-i18n="base_panel_h3">Deployment Base</h3>
               </div>
-              <p class="base-address">Sangkat Mean Chey, Khan Mean Chey,<br />Phnom Penh, Cambodia</p>
+              <p class="base-address" data-i18n-html="base_address">Sangkat Mean Chey, Khan Mean Chey,<br />Phnom Penh, Cambodia</p>
               <div class="target-roles">
-                <span class="role-tag">IT Support Officer</span>
-                <span class="role-tag">Network Technician</span>
-                <span class="role-tag">CCTV Technician</span>
+                <span class="role-tag" data-i18n="role_tag_1">IT Support Officer</span>
+                <span class="role-tag" data-i18n="role_tag_2">Network Technician</span>
+                <span class="role-tag" data-i18n="role_tag_3">CCTV Technician</span>
               </div>
             </div>
           </aside>
@@ -395,9 +409,9 @@
     <section id="lab" class="section">
       <div class="container">
         <div class="section-head reveal">
-          <span class="section-tag mono">02 // INTERACTIVE ARCHITECTURE LAB</span>
-          <h2 class="section-title">Live Infrastructure &amp; Troubleshooting Simulator</h2>
-          <p class="section-sub">
+          <span class="section-tag mono" data-i18n="s2_tag">02 // INTERACTIVE ARCHITECTURE LAB</span>
+          <h2 class="section-title" data-i18n="s2_title">Live Infrastructure &amp; Troubleshooting Simulator</h2>
+          <p class="section-sub" data-i18n="s2_sub">
             Switch operational scenarios below to inspect how I design, segment, and troubleshoot enterprise networks
             and CCTV surveillance topologies.
           </p>
@@ -406,16 +420,16 @@
         <div class="lab-shell glass-card spotlight-card reveal" data-delay="100">
           <div class="lab-controls" role="tablist" aria-label="Network Simulation Scenarios">
             <button type="button" class="lab-tab active" data-scenario="normal" role="tab" aria-selected="true">
-              <span class="led green"></span> Normal Operations
+              <span class="led green"></span> <span data-i18n="lab_tab_normal">Normal Operations</span>
             </button>
             <button type="button" class="lab-tab" data-scenario="vlan" role="tab" aria-selected="false">
-              <span class="led cyan"></span> VLAN &amp; Bandwidth QoS
+              <span class="led cyan"></span> <span data-i18n="lab_tab_vlan">VLAN &amp; Bandwidth QoS</span>
             </button>
             <button type="button" class="lab-tab" data-scenario="conflict" role="tab" aria-selected="false">
-              <span class="led amber"></span> IP Conflict &amp; Drop Fix
+              <span class="led amber"></span> <span data-i18n="lab_tab_conflict">IP Conflict &amp; Drop Fix</span>
             </button>
             <button type="button" class="lab-tab" data-scenario="cctv" role="tab" aria-selected="false">
-              <span class="led blue"></span> CCTV NVR Backup Stream
+              <span class="led blue"></span> <span data-i18n="lab_tab_cctv">CCTV NVR Backup Stream</span>
             </button>
           </div>
 
@@ -426,8 +440,8 @@
                 xmlns="http://www.w3.org/2000/svg"
                 aria-label="Interactive Enterprise Network and CCTV Topology Diagram">
                 <defs>
-                  <filter id="glowCyan" x="-30%" y="-30%" width="160%" height="160%">
-                    <feGaussianBlur stdDeviation="4" result="blur" />
+                  <filter id="glowCyan" filterUnits="userSpaceOnUse" x="-40" y="-40" width="840" height="480">
+                    <feGaussianBlur stdDeviation="3.5" result="blur" />
                     <feMerge>
                       <feMergeNode in="blur" />
                       <feMergeNode in="SourceGraphic" />
@@ -503,8 +517,8 @@
               <svg class="topology-svg topology-svg--mobile" viewBox="0 0 340 460" fill="none"
                 xmlns="http://www.w3.org/2000/svg" aria-label="Mobile Enterprise Network and CCTV Topology Diagram">
                 <defs>
-                  <filter id="glowCyanMobile" x="-30%" y="-30%" width="160%" height="160%">
-                    <feGaussianBlur stdDeviation="3.5" result="blur" />
+                  <filter id="glowCyanMobile" filterUnits="userSpaceOnUse" x="-40" y="-40" width="420" height="540">
+                    <feGaussianBlur stdDeviation="3" result="blur" />
                     <feMerge>
                       <feMergeNode in="blur" />
                       <feMergeNode in="SourceGraphic" />
@@ -591,15 +605,15 @@
 
               <div class="telemetry-stats">
                 <div class="t-stat">
-                  <span class="t-label">LATENCY</span>
+                  <span class="t-label" data-i18n="stat_latency">LATENCY</span>
                   <strong class="mono" id="labLatency">1.2 ms</strong>
                 </div>
                 <div class="t-stat">
-                  <span class="t-label">PACKET LOSS</span>
+                  <span class="t-label" data-i18n="stat_loss">PACKET LOSS</span>
                   <strong class="mono" id="labLoss">0.00%</strong>
                 </div>
                 <div class="t-stat">
-                  <span class="t-label">LINK SPEED</span>
+                  <span class="t-label" data-i18n="stat_speed">LINK SPEED</span>
                   <strong class="mono" id="labSpeed">1000 Mbps</strong>
                 </div>
               </div>
@@ -619,18 +633,18 @@
     <section id="skills" class="section">
       <div class="container">
         <div class="section-head reveal">
-          <span class="section-tag mono">03 // TECHNICAL ARSENAL</span>
-          <h2 class="section-title">Skills &amp; Interactive NOC Terminal</h2>
+          <span class="section-tag mono" data-i18n="s3_tag">03 // TECHNICAL ARSENAL</span>
+          <h2 class="section-title" data-i18n="s3_title">Skills &amp; Interactive NOC Terminal</h2>
         </div>
 
         <div class="skills-layout">
           <!-- Left: Filterable Skills Matrix -->
           <div class="skills-panel reveal" data-delay="80">
             <div class="filter-bar" role="tablist" aria-label="Skill Categories">
-              <button type="button" class="filter-btn active" data-filter="all">All Competencies</button>
-              <button type="button" class="filter-btn" data-filter="network">Networking &amp; Security</button>
-              <button type="button" class="filter-btn" data-filter="systems">Systems &amp; OS</button>
-              <button type="button" class="filter-btn" data-filter="cctv">CCTV &amp; Cabling</button>
+              <button type="button" class="filter-btn active" data-filter="all" data-i18n="filter_all">All Competencies</button>
+              <button type="button" class="filter-btn" data-filter="network" data-i18n="filter_network">Networking &amp; Security</button>
+              <button type="button" class="filter-btn" data-filter="systems" data-i18n="filter_systems">Systems &amp; OS</button>
+              <button type="button" class="filter-btn" data-filter="cctv" data-i18n="filter_cctv">CCTV &amp; Cabling</button>
             </div>
 
             <div class="skills-grid" id="skillsGrid">
@@ -647,8 +661,8 @@
                   </span>
                   <span class="mono skill-pct">92%</span>
                 </div>
-                <h3>Network Administration</h3>
-                <p>Routers, Layer 2/3 switches, wireless APs, TCP/IP, DHCP &amp; IP subnetting.</p>
+                <h3 data-i18n="skill1_title">Network Administration</h3>
+                <p data-i18n="skill1_desc">Routers, Layer 2/3 switches, wireless APs, TCP/IP, DHCP &amp; IP subnetting.</p>
                 <div class="skill-bar"><span style="--w: 92%"></span></div>
               </article>
 
@@ -662,8 +676,8 @@
                   </span>
                   <span class="mono skill-pct">88%</span>
                 </div>
-                <h3>Network Security &amp; VLAN</h3>
-                <p>VLAN segmentation, traffic isolation &amp; bandwidth allocation for surveillance and offices.</p>
+                <h3 data-i18n="skill2_title">Network Security &amp; VLAN</h3>
+                <p data-i18n="skill2_desc">VLAN segmentation, traffic isolation &amp; bandwidth allocation for surveillance and offices.</p>
                 <div class="skill-bar"><span style="--w: 88%"></span></div>
               </article>
 
@@ -679,9 +693,8 @@
                   </span>
                   <span class="mono skill-pct">94%</span>
                 </div>
-                <h3>Hardware &amp; OS Deployment</h3>
-                <p>Automated Windows OS setups, drive partitioning, workstation mapping &amp; local domain integration.
-                </p>
+                <h3 data-i18n="skill3_title">Hardware &amp; OS Deployment</h3>
+                <p data-i18n="skill3_desc">Automated Windows OS setups, drive partitioning, workstation mapping &amp; local domain integration.</p>
                 <div class="skill-bar"><span style="--w: 94%"></span></div>
               </article>
 
@@ -696,8 +709,8 @@
                   </span>
                   <span class="mono skill-pct">93%</span>
                 </div>
-                <h3>CCTV &amp; NVR/DVR Systems</h3>
-                <p>Site layout planning, analog &amp; IP camera mounting/alignment, and secure NVR/DVR video backup.</p>
+                <h3 data-i18n="skill4_title">CCTV &amp; NVR/DVR Systems</h3>
+                <p data-i18n="skill4_desc">Site layout planning, analog &amp; IP camera mounting/alignment, and secure NVR/DVR video backup.</p>
                 <div class="skill-bar"><span style="--w: 93%"></span></div>
               </article>
 
@@ -713,8 +726,8 @@
                   </span>
                   <span class="mono skill-pct">95%</span>
                 </div>
-                <h3>Cat5e/Cat6 &amp; Diagnostics</h3>
-                <p>Structured cabling, RJ45 termination, rack patching, cable testing, and IP conflict resolution.</p>
+                <h3 data-i18n="skill5_title">Cat5e/Cat6 &amp; Diagnostics</h3>
+                <p data-i18n="skill5_desc">Structured cabling, RJ45 termination, rack patching, cable testing, and IP conflict resolution.</p>
                 <div class="skill-bar"><span style="--w: 95%"></span></div>
               </article>
 
@@ -730,9 +743,8 @@
                   </span>
                   <span class="mono skill-pct">90%</span>
                 </div>
-                <h3>Productivity &amp; Reporting</h3>
-                <p>Microsoft Office Suite for network topology documentation, asset inventories &amp; incident reports.
-                </p>
+                <h3 data-i18n="skill6_title">Productivity &amp; Reporting</h3>
+                <p data-i18n="skill6_desc">Microsoft Office Suite for network topology documentation, asset inventories &amp; incident reports.</p>
                 <div class="skill-bar"><span style="--w: 90%"></span></div>
               </article>
             </div>
@@ -760,15 +772,14 @@
             </div>
 
             <div class="terminal-body mono" id="terminalOutput" aria-live="polite">
-              <div class="t-line t-muted">Welcome to Kun Amra Interactive IT Console v2.6</div>
-              <div class="t-line t-muted">Click a command pill above or type <span class="t-accent">help</span> and
-                press Enter.</div>
+              <div class="t-line t-muted" data-i18n="term_welcome_1">Welcome to Kun Amra Interactive IT Console v2.6</div>
+              <div class="t-line t-muted" data-i18n-html="term_welcome_2">Click a command pill above or type <span class="t-accent">help</span> and press Enter.</div>
             </div>
 
             <form class="terminal-input-row" id="terminalForm" autocomplete="off">
               <label for="terminalInput" class="mono terminal-prompt">kun@noc:~$</label>
               <input type="text" id="terminalInput" class="terminal-input mono"
-                placeholder="type command (e.g. help, skills, ping ktc-switch)..." spellcheck="false" />
+                data-i18n-placeholder="term_ph" placeholder="type command (e.g. help, skills, ping ktc-switch)..." spellcheck="false" />
             </form>
           </div>
         </div>
@@ -779,8 +790,8 @@
     <section id="experience" class="section">
       <div class="container">
         <div class="section-head reveal">
-          <span class="section-tag mono">04 // FIELD OPERATIONS</span>
-          <h2 class="section-title">Professional &amp; Technical Experience</h2>
+          <span class="section-tag mono" data-i18n="s4_tag">04 // FIELD OPERATIONS</span>
+          <h2 class="section-title" data-i18n="s4_title">Professional &amp; Technical Experience</h2>
         </div>
 
         <div class="timeline" id="experienceTimeline">
@@ -793,31 +804,27 @@
             <div class="glass-card spotlight-card timeline-card">
               <div class="timeline-meta">
                 <span class="mono timeline-date">12-2025 &ndash; 06-2026</span>
-                <span class="badge badge-cyan">Enterprise &amp; Field Deployment</span>
+                <span class="badge badge-cyan" data-i18n="exp1_badge">Enterprise &amp; Field Deployment</span>
               </div>
-              <h3>CCTV &amp; Network Technician</h3>
-              <p class="timeline-org">KTC Engineering &bull; Phnom Penh, Cambodia</p>
+              <h3 data-i18n="exp1_title">CCTV &amp; Network Technician</h3>
+              <p class="timeline-org" data-i18n="exp1_org">KTC Engineering &bull; Phnom Penh, Cambodia</p>
 
               <div class="ops-grid">
                 <div class="ops-item">
-                  <strong>Network Infrastructure</strong>
-                  <p>Installed and configured routers, switches, access points, and workstation IP parameters (TCP/IP,
-                    DHCP).</p>
+                  <strong data-i18n="exp1_op1_t">Network Infrastructure</strong>
+                  <p data-i18n="exp1_op1_d">Installed and configured routers, switches, access points, and workstation IP parameters (TCP/IP, DHCP).</p>
                 </div>
                 <div class="ops-item">
-                  <strong>Surveillance Deployment</strong>
-                  <p>Planned site layouts, mounted and aligned analog &amp; IP cameras, and configured NVR/DVR storage
-                    for secure video backups.</p>
+                  <strong data-i18n="exp1_op2_t">Surveillance Deployment</strong>
+                  <p data-i18n="exp1_op2_d">Planned site layouts, mounted and aligned analog &amp; IP cameras, and configured NVR/DVR storage for secure video backups.</p>
                 </div>
                 <div class="ops-item">
-                  <strong>System &amp; Operating Setup</strong>
-                  <p>Automated Windows OS setups, managed drive partitioning, and connected client workstations to
-                    shared network resources.</p>
+                  <strong data-i18n="exp1_op3_t">System &amp; Operating Setup</strong>
+                  <p data-i18n="exp1_op3_d">Automated Windows OS setups, managed drive partitioning, and connected client workstations to shared network resources.</p>
                 </div>
                 <div class="ops-item">
-                  <strong>Field Troubleshooting</strong>
-                  <p>Diagnosed network connectivity drops, IP conflicts, and installed/tested Cat5e/Cat6 Ethernet
-                    cabling.</p>
+                  <strong data-i18n="exp1_op4_t">Field Troubleshooting</strong>
+                  <p data-i18n="exp1_op4_d">Diagnosed network connectivity drops, IP conflicts, and installed/tested Cat5e/Cat6 Ethernet cabling.</p>
                 </div>
               </div>
             </div>
@@ -827,26 +834,24 @@
             <div class="timeline-node" aria-hidden="true"><span></span></div>
             <div class="glass-card spotlight-card timeline-card">
               <div class="timeline-meta">
-                <span class="mono timeline-date">ACADEMIC LAB PROJECTS</span>
-                <span class="badge badge-blue">Institute Lab &amp; Teamwork</span>
+                <span class="mono timeline-date" data-i18n="exp2_date">ACADEMIC LAB PROJECTS</span>
+                <span class="badge badge-blue" data-i18n="exp2_badge">Institute Lab &amp; Teamwork</span>
               </div>
-              <h3>CCTV &amp; Network Technician (Lab / School Projects)</h3>
-              <p class="timeline-org">Industrial Technical Institute (ITI) &bull; Phnom Penh, Cambodia</p>
+              <h3 data-i18n="exp2_title">CCTV &amp; Network Technician (Lab / School Projects)</h3>
+              <p class="timeline-org" data-i18n="exp2_org">Industrial Technical Institute (ITI) &bull; Phnom Penh, Cambodia</p>
 
               <div class="ops-grid">
                 <div class="ops-item">
-                  <strong>Hardware Configuration</strong>
-                  <p>Configured routers, switches, and client IP addresses for multi-node network lab topologies.</p>
+                  <strong data-i18n="exp2_op1_t">Hardware Configuration</strong>
+                  <p data-i18n="exp2_op1_d">Configured routers, switches, and client IP addresses for multi-node network lab topologies.</p>
                 </div>
                 <div class="ops-item">
-                  <strong>Troubleshooting</strong>
-                  <p>Identified and resolved IP conflicts and faulty network cabling during hands-on team deployments.
-                  </p>
+                  <strong data-i18n="exp2_op2_t">Troubleshooting</strong>
+                  <p data-i18n="exp2_op2_d">Identified and resolved IP conflicts and faulty network cabling during hands-on team deployments.</p>
                 </div>
                 <div class="ops-item ops-item--wide">
-                  <strong>Team Collaboration</strong>
-                  <p>Coordinated closely with team members on technical implementation tasks and strict project
-                    deadlines.</p>
+                  <strong data-i18n="exp2_op3_t">Team Collaboration</strong>
+                  <p data-i18n="exp2_op3_d">Coordinated closely with team members on technical implementation tasks and strict project deadlines.</p>
                 </div>
               </div>
             </div>
@@ -859,9 +864,9 @@
     <section id="credentials" class="section">
       <div class="container">
         <div class="section-head reveal">
-          <span class="section-tag mono">05 // ACADEMIC CREDENTIALS</span>
-          <h2 class="section-title">Education &amp; Official Certifications</h2>
-          <p class="section-sub">
+          <span class="section-tag mono" data-i18n="s5_tag">05 // ACADEMIC CREDENTIALS</span>
+          <h2 class="section-title" data-i18n="s5_title">Education &amp; Official Certifications</h2>
+          <p class="section-sub" data-i18n="s5_sub">
             Formal technical education approved by the Ministry of Labour and Vocational Training (MLVT), with
             inspectable official certificates.
           </p>
@@ -871,16 +876,18 @@
           <article class="glass-card spotlight-card tilt-card edu-card edu-card--featured reveal" data-delay="80">
             <div class="edu-top">
               <span class="mono edu-year">2023 &ndash; 2025</span>
-              <span class="badge badge-emerald">Verified Degree</span>
+              <span class="badge badge-emerald" data-i18n="edu1_badge">Verified Degree</span>
             </div>
-            <h3>Bachelor of Technology in Information Technology</h3>
-            <p class="edu-school">Industrial Technical Institute (ITI), Phnom Penh, Cambodia</p>
+            <h3 data-i18n="edu1_title">Bachelor of Technology in Information Technology</h3>
+            <p class="edu-school" data-i18n="edu1_school">Industrial Technical Institute (ITI), Phnom Penh, Cambodia</p>
             <ul class="edu-details">
-              <li>Exam Session: October 06, 2025</li>
-              <li>Provisional Certificate Issued: September 21, 2026</li>
+              <li data-i18n="edu1_li1">Exam Session: October 06, 2025</li>
+              <li data-i18n="edu1_li2">Provisional Certificate Issued: September 21, 2026</li>
             </ul>
             <button type="button" class="btn btn-outline btn-sm cert-trigger"
               data-cert-src="assets/cert-bachelor-it.jpg"
+              data-i18n-cert-title="edu1_cert_title"
+              data-i18n-cert-sub="edu1_cert_sub"
               data-cert-title="Bachelor of Technology in Information Technology — Provisional Certificate"
               data-cert-sub="Industrial Technical Institute (ITI) &bull; Exam Session: October 06, 2025">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -888,23 +895,25 @@
                 <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
                 <circle cx="12" cy="12" r="3" />
               </svg>
-              <span>Inspect Official Certificate</span>
+              <span data-i18n="edu1_btn">Inspect Official Certificate</span>
             </button>
           </article>
 
           <article class="glass-card spotlight-card tilt-card edu-card edu-card--featured reveal" data-delay="140">
             <div class="edu-top">
               <span class="mono edu-year">2021 &ndash; 2023</span>
-              <span class="badge badge-cyan">MLVT Approved</span>
+              <span class="badge badge-cyan" data-i18n="edu2_badge">MLVT Approved</span>
             </div>
-            <h3>Technical Higher Diploma in Information Technology</h3>
-            <p class="edu-school">Industrial Technical Institute (ITI), Phnom Penh, Cambodia</p>
+            <h3 data-i18n="edu2_title">Technical Higher Diploma in Information Technology</h3>
+            <p class="edu-school" data-i18n="edu2_school">Industrial Technical Institute (ITI), Phnom Penh, Cambodia</p>
             <ul class="edu-details">
-              <li>Exam Session: November 20, 2023</li>
-              <li>Approved by Ministry of Labour and Vocational Training (Issued April 29, 2024)</li>
+              <li data-i18n="edu2_li1">Exam Session: November 20, 2023</li>
+              <li data-i18n="edu2_li2">Approved by Ministry of Labour and Vocational Training (Issued April 29, 2024)</li>
             </ul>
             <button type="button" class="btn btn-outline btn-sm cert-trigger"
               data-cert-src="assets/cert-higher-diploma.jpg"
+              data-i18n-cert-title="edu2_cert_title"
+              data-i18n-cert-sub="edu2_cert_sub"
               data-cert-title="Technical Higher Diploma in Information Technology"
               data-cert-sub="Industrial Technical Institute (ITI) &bull; Ministry of Labour and Vocational Training">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -912,7 +921,7 @@
                 <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
                 <circle cx="12" cy="12" r="3" />
               </svg>
-              <span>Inspect Official Diploma</span>
+              <span data-i18n="edu2_btn">Inspect Official Diploma</span>
             </button>
           </article>
         </div>
@@ -921,19 +930,19 @@
           <article class="glass-card spotlight-card edu-card reveal" data-delay="180">
             <div class="edu-top">
               <span class="mono edu-year">2019 &ndash; 2021</span>
-              <span class="badge badge-muted">Grade 12</span>
+              <span class="badge badge-muted" data-i18n="edu3_badge">Grade 12</span>
             </div>
-            <h3>High School Diploma</h3>
-            <p class="edu-school">Hun Sen Cheung Chnok High School</p>
+            <h3 data-i18n="edu3_title">High School Diploma</h3>
+            <p class="edu-school" data-i18n="edu3_school">Hun Sen Cheung Chnok High School</p>
           </article>
 
           <article class="glass-card spotlight-card edu-card reveal" data-delay="220">
             <div class="edu-top">
               <span class="mono edu-year">2015 &ndash; 2019</span>
-              <span class="badge badge-muted">Grade 9</span>
+              <span class="badge badge-muted" data-i18n="edu4_badge">Grade 9</span>
             </div>
-            <h3>Secondary School</h3>
-            <p class="edu-school">Chealea Secondary School</p>
+            <h3 data-i18n="edu4_title">Secondary School</h3>
+            <p class="edu-school" data-i18n="edu4_school">Chealea Secondary School</p>
           </article>
         </div>
       </div>
@@ -943,15 +952,15 @@
     <section id="contact" class="section">
       <div class="container">
         <div class="section-head reveal">
-          <span class="section-tag mono">06 // DISPATCH &amp; REFERENCE</span>
-          <h2 class="section-title">Connect for IT Support &amp; Network Roles</h2>
+          <span class="section-tag mono" data-i18n="s6_tag">06 // DISPATCH &amp; REFERENCE</span>
+          <h2 class="section-title" data-i18n="s6_title">Connect for IT Support &amp; Network Roles</h2>
         </div>
 
         <div class="contact-grid">
           <div class="contact-left">
             <div class="glass-card spotlight-card contact-info-card reveal" data-delay="80">
-              <h3>Direct Channels</h3>
-              <p class="contact-intro">
+              <h3 data-i18n="contact_h3">Direct Channels</h3>
+              <p class="contact-intro" data-i18n="contact_intro">
                 Ready for immediate interviews and technical assessments in Phnom Penh. Reach out directly via phone or
                 email, or download the full CV packet.
               </p>
@@ -966,13 +975,13 @@
                     </svg>
                   </span>
                   <div class="channel-text">
-                    <small>Phone (Call or Telegram)</small>
+                    <small data-i18n="ch_phone">Phone (Call or Telegram)</small>
                     <button type="button" class="phone-link-btn phone-trigger mono" data-phone-display="069-524-314"
                       data-phone-e164="+85569524314" data-phone-label="Kun Amra" title="Click to Call or open Telegram">
                       069-524-314
                     </button>
                   </div>
-                  <button type="button" class="copy-mini" data-copy="069-524-314">Copy</button>
+                  <button type="button" class="copy-mini" data-copy="069-524-314" data-i18n="btn_copy">Copy</button>
                 </div>
 
                 <div class="channel-row">
@@ -984,10 +993,10 @@
                     </svg>
                   </span>
                   <div class="channel-text">
-                    <small>Email</small>
+                    <small data-i18n="ch_email">Email</small>
                     <a href="mailto:kunamracambodia@gmail.com" class="mono">kunamracambodia@gmail.com</a>
                   </div>
-                  <button type="button" class="copy-mini" data-copy="kunamracambodia@gmail.com">Copy</button>
+                  <button type="button" class="copy-mini" data-copy="kunamracambodia@gmail.com" data-i18n="btn_copy">Copy</button>
                 </div>
 
                 <div class="channel-row">
@@ -999,63 +1008,62 @@
                     </svg>
                   </span>
                   <div class="channel-text">
-                    <small>Location</small>
-                    <span>Sangkat Mean Chey, Khan Mean Chey, Phnom Penh</span>
+                    <small data-i18n="ch_location">Location</small>
+                    <span data-i18n="ch_location_val">Sangkat Mean Chey, Khan Mean Chey, Phnom Penh</span>
                   </div>
                 </div>
               </div>
 
               <div class="contact-cta-pair">
-                <a href="Kun Amra.pdf" download="Kun Amra - CV.pdf" class="btn btn-primary magnetic">Download Full CV
-                  (PDF)</a>
-                <button type="button" class="btn btn-outline" id="openCoverLetterContact">View Cover Letter</button>
+                <a href="Kun Amra.pdf" download="Kun Amra - CV.pdf" class="btn btn-primary magnetic" data-i18n="btn_dl_cv_full">Download Full CV (PDF)</a>
+                <button type="button" class="btn btn-outline" id="openCoverLetterContact" data-i18n="btn_view_cover">View Cover Letter</button>
               </div>
             </div>
 
             <!-- Professional Reference Card -->
             <div class="glass-card spotlight-card reference-card reveal" data-delay="140">
               <div class="ref-head">
-                <span class="mono ref-tag">PROFESSIONAL REFERENCE</span>
-                <span class="badge badge-blue">Verified</span>
+                <span class="mono ref-tag" data-i18n="ref_tag">PROFESSIONAL REFERENCE</span>
+                <span class="badge badge-blue" data-i18n="ref_badge">Verified</span>
               </div>
               <h4>Mr. Thiv Rathana</h4>
-              <p class="ref-role">Vice President of IT Department</p>
+              <p class="ref-role" data-i18n="ref_role">Vice President of IT Department</p>
               <div class="ref-phone">
                 <button type="button" class="phone-link-btn phone-trigger mono" data-phone-display="012 211 015"
                   data-phone-e164="+85512211015" data-phone-label="Mr. Thiv Rathana"
                   title="Click to Call or open Telegram">
-                  Tel: 012 211 015
+                  <span data-i18n="ref_tel_prefix">Tel:</span> 012 211 015
                 </button>
-                <button type="button" class="copy-mini" data-copy="012 211 015">Copy</button>
+                <button type="button" class="copy-mini" data-copy="012 211 015" data-i18n="btn_copy">Copy</button>
               </div>
             </div>
           </div>
 
           <!-- Smart Email Dispatch Composer -->
           <form class="glass-card spotlight-card contact-form reveal" id="contactForm" data-delay="160">
-            <h3>Send Interview / Inquiry Dispatch</h3>
-            <p class="form-sub">Compose your message below to open an instant pre-filled email draft to Kun Amra.</p>
+            <h3 data-i18n="form_h3">Send Interview / Inquiry Dispatch</h3>
+            <p class="form-sub" data-i18n="form_sub">Compose your message below to open an instant pre-filled email draft to Kun Amra.</p>
 
             <div class="field-group">
-              <label for="senderName">Your Name / Organization</label>
+              <label for="senderName" data-i18n="form_label_name">Your Name / Organization</label>
               <input type="text" id="senderName" name="senderName" required
-                placeholder="e.g. HR Team — Enterprise IT" />
+                data-i18n-placeholder="form_ph_name" placeholder="e.g. HR Team — Enterprise IT" />
             </div>
 
             <div class="field-group">
-              <label for="senderSubject">Role / Topic</label>
+              <label for="senderSubject" data-i18n="form_label_subject">Role / Topic</label>
               <input type="text" id="senderSubject" name="senderSubject" required
-                placeholder="e.g. Interview Invitation — IT Support Officer" />
+                data-i18n-placeholder="form_ph_subject" placeholder="e.g. Interview Invitation — IT Support Officer" />
             </div>
 
             <div class="field-group">
-              <label for="senderMessage">Message</label>
+              <label for="senderMessage" data-i18n="form_label_msg">Message</label>
               <textarea id="senderMessage" name="senderMessage" rows="5" required
-                placeholder="Share role details, interview schedule, or technical requirements..."></textarea>
+                data-i18n-placeholder="form_ph_msg" placeholder="Share role details, interview schedule, or technical requirements..."></textarea>
             </div>
 
             <button type="submit" class="btn btn-primary btn-full magnetic">
-              <span>Launch Email Dispatch</span>
+              <span data-i18n="form_submit">Launch Email Dispatch</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 aria-hidden="true">
                 <line x1="22" y1="2" x2="11" y2="13" />
@@ -1072,11 +1080,10 @@
     <div class="container footer-inner">
       <div class="footer-brand">
         <strong>KUN AMRA</strong>
-        <span class="mono">&bull; IT Support Officer &amp; Network Technician</span>
+        <span class="mono" data-i18n="footer_role">&bull; IT Support Officer &amp; Network Technician</span>
       </div>
-      <p class="footer-meta">Phnom Penh, Cambodia &bull; Built from verified credentials in <a href="Kun Amra.pdf"
-          target="_blank" rel="noopener">Kun Amra.pdf</a></p>
-      <a href="#top" class="back-top mono" aria-label="Back to top">&uarr; TOP</a>
+      <p class="footer-meta" data-i18n-html="footer_meta">Phnom Penh, Cambodia &bull; Built from verified credentials in <a href="Kun Amra.pdf" target="_blank" rel="noopener">Kun Amra.pdf</a></p>
+      <a href="#top" class="back-top mono" aria-label="Back to top" data-i18n="back_top">&uarr; TOP</a>
     </div>
   </footer>
 
@@ -1085,12 +1092,12 @@
     <div class="modal-dialog modal-dialog--cert">
       <div class="modal-header">
         <div>
-          <span class="mono modal-kicker">VERIFIED ACADEMIC CREDENTIAL</span>
-          <h3 id="certModalTitle">Official Certificate</h3>
+          <span class="mono modal-kicker" data-i18n="modal_cert_kicker">VERIFIED ACADEMIC CREDENTIAL</span>
+          <h3 id="certModalTitle" data-i18n="cert_default_title">Official Certificate</h3>
           <p id="certModalSub" class="modal-sub"></p>
         </div>
         <div class="modal-header-actions">
-          <button type="button" class="btn btn-ghost btn-sm" id="certZoomBtn">Zoom In</button>
+          <button type="button" class="btn btn-ghost btn-sm" id="certZoomBtn" data-i18n="cert_zoom_in">Zoom In</button>
           <button type="button" class="modal-close" id="certCloseBtn"
             aria-label="Close Certificate Modal">&times;</button>
         </div>
@@ -1106,16 +1113,16 @@
     <div class="modal-dialog modal-dialog--letter">
       <div class="modal-header">
         <div>
-          <span class="mono modal-kicker">OFFICIAL APPLICATION DOCUMENT</span>
-          <h3 id="coverModalTitle">Cover Letter — IT Support Officer</h3>
-          <p class="modal-sub">Kun Amra &bull; Phnom Penh, Cambodia &bull; 069-524-314</p>
+          <span class="mono modal-kicker" data-i18n="modal_cover_kicker">OFFICIAL APPLICATION DOCUMENT</span>
+          <h3 id="coverModalTitle" data-i18n="modal_cover_title">Cover Letter — IT Support Officer</h3>
+          <p class="modal-sub" data-i18n="modal_cover_sub">Kun Amra &bull; Phnom Penh, Cambodia &bull; 069-524-314</p>
         </div>
         <button type="button" class="modal-close" id="coverCloseBtn"
           aria-label="Close Cover Letter Modal">&times;</button>
       </div>
       <div class="letter-body">
-        <p class="letter-salutation">Dear Hiring Manager,</p>
-        <p>
+        <p class="letter-salutation" data-i18n="letter_salutation">Dear Hiring Manager,</p>
+        <p data-i18n-html="letter_p1">
           I am writing to formally express my interest in the <strong>IT Support Officer</strong> position. As an
           Information
           Technology graduate holding a <strong>Technical Higher Diploma</strong> and a <strong>Bachelor of
@@ -1125,32 +1132,31 @@
           I bring a strong mix of theoretical knowledge and field capability.
         </p>
         <div class="letter-capabilities">
-          <h4>Core IT Support Capabilities:</h4>
+          <h4 data-i18n="letter_cap_h4">Core IT Support Capabilities:</h4>
           <ul>
-            <li><strong>Network Administration:</strong> Installing and configuring routers, Layer 2/3 switches,
+            <li data-i18n-html="letter_cap_1"><strong>Network Administration:</strong> Installing and configuring routers, Layer 2/3 switches,
               wireless APs, DHCP, and subnetting.</li>
-            <li><strong>System Deployment:</strong> Windows OS setup, drive partitioning, workstation mapping, and local
+            <li data-i18n-html="letter_cap_2"><strong>System Deployment:</strong> Windows OS setup, drive partitioning, workstation mapping, and local
               domain integration.</li>
-            <li><strong>Hardware &amp; Troubleshooting:</strong> Resolving IP conflicts, network drops, and executing
+            <li data-i18n-html="letter_cap_3"><strong>Hardware &amp; Troubleshooting:</strong> Resolving IP conflicts, network drops, and executing
               physical Cat5e/Cat6 cabling and terminations.</li>
-            <li><strong>Network &amp; Security Operations:</strong> Implementing basic VLAN segmentation and bandwidth
+            <li data-i18n-html="letter_cap_4"><strong>Network &amp; Security Operations:</strong> Implementing basic VLAN segmentation and bandwidth
               allocation for surveillance and enterprise networks.</li>
           </ul>
         </div>
-        <p>
+        <p data-i18n="letter_p2">
           I am a quick learner who adapts easily to new infrastructure guidelines and is fully committed to ensuring
           high network uptime and security.
         </p>
-        <p>
+        <p data-i18n="letter_p3">
           Thank you for your time and consideration. I look forward to the opportunity to discuss my qualifications
           further in an interview.
         </p>
-        <p class="letter-sign">Sincerely,<br /><strong>Kun Amra</strong></p>
+        <p class="letter-sign" data-i18n-html="letter_sign">Sincerely,<br /><strong>Kun Amra</strong></p>
       </div>
       <div class="modal-footer">
-        <a href="Kun Amra.pdf" download="Kun Amra - CV.pdf" class="btn btn-primary btn-sm">Download Full CV + Letter
-          (PDF)</a>
-        <button type="button" class="btn btn-ghost btn-sm" id="coverCloseFooterBtn">Close</button>
+        <a href="Kun Amra.pdf" download="Kun Amra - CV.pdf" class="btn btn-primary btn-sm" data-i18n="letter_dl_btn">Download Full CV + Letter (PDF)</a>
+        <button type="button" class="btn btn-ghost btn-sm" id="coverCloseFooterBtn" data-i18n="btn_close">Close</button>
       </div>
     </div>
   </div>
@@ -1160,7 +1166,7 @@
     <div class="modal-dialog modal-dialog--phone">
       <div class="modal-header">
         <div>
-          <span class="mono modal-kicker">CONNECT VIA PHONE</span>
+          <span class="mono modal-kicker" data-i18n="modal_phone_kicker">CONNECT VIA PHONE</span>
           <h3 id="phoneModalTitle">Kun Amra</h3>
           <p id="phoneModalSub" class="modal-sub mono">069-524-314 &bull; +85569524314</p>
         </div>
@@ -1177,7 +1183,7 @@
             </svg>
           </span>
           <span class="phone-action-text">
-            <strong>1. Call Phone</strong>
+            <strong data-i18n="phone_opt1_title">1. Call Phone</strong>
             <small id="phoneCallSub" class="mono">Dial +85569524314</small>
           </span>
           <span class="phone-action-arrow" aria-hidden="true">&rarr;</span>
@@ -1193,16 +1199,15 @@
             </svg>
           </span>
           <span class="phone-action-text">
-            <strong>2. Open Telegram</strong>
+            <strong data-i18n="phone_opt2_title">2. Open Telegram</strong>
             <small id="phoneTelegramSub" class="mono">t.me/+85569524314</small>
           </span>
           <span class="phone-action-arrow" aria-hidden="true">&rarr;</span>
         </a>
       </div>
       <div class="modal-footer modal-footer--between">
-        <button type="button" class="btn btn-outline btn-sm" id="phoneModalCopyBtn" data-copy="069-524-314">Copy
-          Number</button>
-        <button type="button" class="btn btn-ghost btn-sm" id="phoneCancelBtn">Cancel</button>
+        <button type="button" class="btn btn-outline btn-sm" id="phoneModalCopyBtn" data-copy="069-524-314" data-i18n="phone_copy_btn">Copy Number</button>
+        <button type="button" class="btn btn-ghost btn-sm" id="phoneCancelBtn" data-i18n="btn_cancel">Cancel</button>
       </div>
     </div>
   </div>
